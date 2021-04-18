@@ -5,6 +5,9 @@
   "repository": "git@github.com:xrxoxcxox/c-noma-bot.git",
   "author": "xrxoxcxox <watanuki@ju-zen.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
   "dependencies": {
     "eris": "^0.15.0"
   },
