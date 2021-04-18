@@ -6,7 +6,8 @@
   "author": "xrxoxcxox <watanuki@ju-zen.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "eris": "^0.15.0"
   },
   "devDependencies": {
     "eslint": "^7.24.0"
