@@ -1,0 +1,8 @@
+{
+  "name": "c-noma-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:xrxoxcxox/c-noma-bot.git",
+  "author": "xrxoxcxox <watanuki@ju-zen.com>",
+  "license": "MIT"
+}
