@@ -1,41 +1,29 @@
-const Eris = require("eris");
+const Eris = require('eris')
+require('dotenv').config()
 
-const { token, channelId } = require("./config.json");
+const token = process.env.DISCORD_BOT_TOKEN
+const channelId = process.env.CHANNEL_ID
 
-const bot = new Eris(token);
+const bot = new Eris(token)
 
-bot.on("ready", () => {
-  // botの準備できたら呼び出されるイベント
-  console.log("Ready!");
-});
+bot.on('ready', () => {
+  console.log('Ready!')
+})
 
-bot.on("voiceChannelJoin", (member, newChannel) => {
-  // 入室処理
-  let ch = newChannel.guild.defaultChannel;
-  console.log(
-    "%s が チャンネル %s に入室しました。",
-    member.username,
-    newChannel.name
-  );
+bot.on('voiceChannelJoin', (member, newChannel) => {
+  console.log('%s が %s に入室しました。', member.username, newChannel.name)
   bot.createMessage(
     channelId,
-    member.username + "が チャンネル[" + newChannel.name + "] に入室しました"
-  );
-});
+    `${member.username}が${newChannel.name}に入室しました`
+  )
+})
 
-bot.on("voiceChannelLeave", (member, oldChannel) => {
-  // 退室処理
-  let ch = oldChannel.guild.defaultChannel;
-  console.log(
-    "%s が チャンネル %s を退室しました。",
-    member.username,
-    oldChannel.name
-  );
+bot.on('voiceChannelLeave', (member, oldChannel) => {
+  console.log('%s が %s を退室しました。', member.username, oldChannel.name)
   bot.createMessage(
     channelId,
-    member.username + "が チャンネル[" + oldChannel.name + "] を退室しました。"
-  );
-});
+    `${member.username}が${oldChannel.name}を退室しました。`
+  )
+})
 
-// Discord に接続します。
-bot.connect();
+bot.connect()
