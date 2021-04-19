@@ -14,7 +14,7 @@ bot.on('voiceChannelJoin', (member, newChannel) => {
   console.log('%s が %s に入室しました。', member.username, newChannel.name)
   bot.createMessage(
     channelId,
-    `${member.username}が${newChannel.name}に入室しました`
+    `${member.username}が${newChannel.name}に入室しました。`
   )
 })
 
